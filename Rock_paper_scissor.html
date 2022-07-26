@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Rock, Paper, Scissor Game
+    </h1>
+    <script>
+        const getUserChoice = userInput => {
+  userInput = userInput.toLowerCase();
+  if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    return userInput;
+  } else {
+    console.log('Error..!, Please type Rock, Paper or Scissors');
+  }
+};
+const getComputerChoice = () => {
+  var randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber){
+    case 0:
+    return 'rock';
+    case 1:
+    return 'paper';
+    case 2:
+    return 'scissors'
+  }
+};
+const determineWinner = (userChoice, computerChoice) => {
+  if(userChoice === computerChoice){
+    return 'This game is a Tie!'
+  }
+  if (userChoice === 'rock'){
+    if (computerChoice === 'paper'){
+      return 'Sorry, Computer Won!';
+    }else{
+      return 'Congratulation, You won!';
+    }
+  }
+  if (userChoice === 'paper'){
+    if (computerChoice === 'scissors'){
+      return 'Sorry, Computer Won!';
+    }else{
+      return 'Congratulation, You won!';
+    }
+    }
+    if (userChoice === 'scissors'){
+      if (computerChoice === 'rock'){
+        return 'Sorry, Computer Won!';
+      }else{
+        return 'Congratulation, You won!';
+      }
+    }
+}
+const playGame = () => {
+  const userChoice = getUserChoice('paper') ;
+  const computerChoice = getComputerChoice ();
+  console.log(`Your Side : ${userChoice}`);
+  console.log(`Computer Side : ${computerChoice}`);
+
+  console.log(determineWinner(userChoice, computerChoice)); 
+}
+playGame();
+    </script>
+</body>
+</html>

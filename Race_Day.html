@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Race Day
+    </h1>
+    <script>
+        let raceNumber = Math.floor(Math.random() * 1000);
+let status = false;
+let age = 12;
+if(age === 18 && status === true){
+  raceNumber += 1000;
+}
+if(age > 18 && status === true){
+  console.log("Your race will be at 9.30am and your race no is "  +  raceNumber)
+} else if(age > 18 && status === false){
+console.log("Your race will be at 11.00am and your race no is "  +  raceNumber)
+}else if(age < 18){
+  console.log("Your race will be at 12.30am and your race no is "  +  raceNumber)
+}else{
+  console.log('Please visit to registration desk')
+}
+    </script>
+</body>
+</html>
